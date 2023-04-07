@@ -2468,7 +2468,7 @@
     return config;
   }
 
-  var VERSION = "1.3.5";
+  var VERSION = "1.3.6";
 
   var validators$1 = {};
 

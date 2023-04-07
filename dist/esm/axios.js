@@ -2654,7 +2654,7 @@ function mergeConfig$1(config1, config2) {
   return config;
 }
 
-const VERSION$1 = "1.3.5";
+const VERSION$1 = "1.3.6";
 
 const validators$1 = {};
 
