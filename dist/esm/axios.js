@@ -1,4 +1,4 @@
-// Axios v1.3.5 Copyright (c) 2023 Matt Zabriskie and contributors
+// Axios v1.3.6 Copyright (c) 2023 Matt Zabriskie and contributors
 function bind(fn, thisArg) {
   return function wrap() {
     return fn.apply(thisArg, arguments);
