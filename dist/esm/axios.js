@@ -1233,15 +1233,56 @@ const Blob$1 = typeof Blob !== 'undefined' ? Blob : null;
  */
 const isStandardBrowserEnv = (() => {
   let product;
-  if (typeof navigator !== 'undefined' && (
-    (product = navigator.product) === 'ReactNative' ||
-    product === 'NativeScript' ||
-    product === 'NS')
+  if (
+    typeof navigator !== "undefined" &&
+    ((product = navigator.product) === "ReactNative" ||
+      product === "NativeScript" ||
+      product === "NS")
   ) {
     return false;
   }
 
-  return typeof window !== 'undefined' && typeof document !== 'undefined';
+  // eslint-disable-next-line no-undef
+  if (typeof my !== "undefined" && my.canIUse) {
+    return false;
+  }
+
+  // eslint-disable-next-line no-undef
+  if (typeof wx !== "undefined" && wx.canIUse) {
+    return false;
+  }
+
+  // eslint-disable-next-line no-undef
+  if (typeof ks !== "undefined" && ks.canIUse) {
+    return false;
+  }
+
+  // eslint-disable-next-line no-undef
+  if (typeof tt !== "undefined" && tt.canIUse) {
+    return false;
+  }
+
+  // eslint-disable-next-line no-undef
+  if (typeof jd !== "undefined" && jd.canIUse) {
+    return false;
+  }
+
+  // eslint-disable-next-line no-undef
+  if (typeof swan !== "undefined" && swan.canIUse) {
+    return false;
+  }
+
+  // eslint-disable-next-line no-undef
+  if (typeof qq !== "undefined" && qq.canIUse) {
+    return false;
+  }
+
+  // eslint-disable-next-line no-undef
+  if (typeof dd !== "undefined" && dd.canIUse) {
+    return false;
+  }
+
+  return typeof window !== "undefined" && typeof document !== "undefined";
 })();
 
 /**
@@ -1253,26 +1294,25 @@ const isStandardBrowserEnv = (() => {
  * `typeof window !== 'undefined' && typeof document !== 'undefined'`.
  * This leads to a problem when axios post `FormData` in webWorker
  */
- const isStandardBrowserWebWorkerEnv = (() => {
+const isStandardBrowserWebWorkerEnv = (() => {
   return (
-    typeof WorkerGlobalScope !== 'undefined' &&
+    typeof WorkerGlobalScope !== "undefined" &&
     // eslint-disable-next-line no-undef
     self instanceof WorkerGlobalScope &&
-    typeof self.importScripts === 'function'
+    typeof self.importScripts === "function"
   );
 })();
-
 
 const platform = {
   isBrowser: true,
   classes: {
     URLSearchParams: URLSearchParams$1,
     FormData: FormData$1,
-    Blob: Blob$1
+    Blob: Blob$1,
   },
   isStandardBrowserEnv,
   isStandardBrowserWebWorkerEnv,
-  protocols: ['http', 'https', 'file', 'blob', 'url', 'data']
+  protocols: ["http", "https", "file", "blob", "url", "data"],
 };
 
 function toURLEncodedForm(data, options) {

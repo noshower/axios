@@ -144,6 +144,9 @@
       "threshold": "5kB"
     }
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "contributors": [
     "Matt Zabriskie (https://github.com/mzabriskie)",
     "Nick Uraltsev (https://github.com/nickuraltsev)",
